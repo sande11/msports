@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    tools:context=".Stream">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingTop="16dp">
+
+        <!-- Profile Icon -->
+        <ImageView
+            android:id="@+id/iconLogo"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/msportslogo" />
+
+        <!-- Notification Icon -->
+        <ImageView
+            android:id="@+id/iconProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="-6dp"
+            android:src="@drawable/ic_action_user"
+            app:tint="#171717" />
+
+        <ImageView
+            android:id="@+id/iconNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_bell"
+            android:layout_toStartOf="@id/iconProfile"
+            app:tint="#171717"
+            android:layout_marginEnd="6dp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:id="@+id/relative_title">
+
+                <!-- TextView for Trending -->
+                <TextView
+                    android:id="@+id/textTrending"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trending_match"
+                    android:fontFamily="@font/broadway"
+                    android:textSize="25sp"
+                    android:textColor="#171717"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:id="@+id/iconsearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="80dp"
+                    android:src="@drawable/ic_action_search"
+                    android:layout_toEndOf="@+id/textTrending"
+                    app:tint="#171717"
+                     />
+
+                <EditText
+                    android:id="@+id/searchField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search_match_you_want_to_stream"
+                    android:visibility="gone"
+                    android:layout_toEndOf="@id/iconsearch"
+                    android:layout_marginStart="10dp"
+                    android:padding="8dp" />
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cardCornerRadius="16dp">
+
+                    <ImageView
+                        android:id="@+id/imageTrending"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/match_image"
+                        android:scaleType="centerCrop" />
+
+                    <!-- Button in the middle of the Image -->
+                    <Button
+                        android:id="@+id/buttonStreamNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/stream_now"
+                        android:backgroundTint="@color/light_green"
+                        android:textColor="#171717"
+                        android:layout_marginEnd="10dp"
+                        android:layout_gravity="bottom|end" />
+                </androidx.cardview.widget.CardView>
+            </FrameLayout>
+
+            <!-- Home News Section -->
+            <RelativeLayout
+                android:id="@+id/news_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
+
+                <!-- TextView for Top News -->
+                <TextView
+                    android:id="@+id/textNews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/broadway"
+                    android:text="@string/match"
+                    android:textColor="#171717"
+                    android:textSize="25sp" />
+
+                <!-- TextView for View All -->
+                <TextView
+                    android:id="@+id/textViewAllnews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="0dp"
+                    android:text="@string/view_all"
+                    android:textColor="#4e5157"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="16dp">
+
+                <ImageView
+                    android:id="@+id/gameTrending"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/match_image"
+                    android:scaleType="centerCrop" />
+
+                <!-- Button in the middle of the Image -->
+                <Button
+                    android:id="@+id/StreamNow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/stream_now"
+                    android:backgroundTint="@color/light_green"
+                    android:textColor="#171717"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="bottom|end" />
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
